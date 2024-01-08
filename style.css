@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Fredoka;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+:root {
+  --body-color: #5A1E76;
+  --board-color: #2B0040;
+  --board-select: #43115B;
+  --player-x: #48D2FE;
+  --draw: #BCDBF9;
+  --player-o: #E2BE00;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--body-color);
+  background-image: url(./imgs/tic.\ tac.toe..png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 300px;
+}
+
+.container {
+  background-color: var(--board-color);
+  padding: 50px;
+  border-radius: 50px;
+}
+.container .top {
+  display: grid;
+  grid-template-columns: repeat(3, 75px);
+  grid-gap: 5px;
+  margin-bottom: 40px;
+  justify-content: space-between;
+  font-size: 11px;
+  text-align: center;
+  font-weight: 800;
+}
+.container .top .card {
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  padding-top: 15px;
+}
+.container .top .card:nth-child(1) {
+  background-color: var(--player-x);
+}
+.container .top .card:nth-child(2) {
+  background-color: var(--draw);
+}
+.container .top .card:nth-child(3) {
+  background-color: var(--player-o);
+}
+.container .top .card .div-bottom {
+  display: flex;
+  height: 60%;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+}
+.container .board {
+  display: grid;
+  grid-template-columns: repeat(3, 75px);
+  grid-gap: 10px;
+}
+.container .board .cell {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  background-color: var(--board-select);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.container .board .x {
+  color: var(--player-x);
+}
+.container .board .o {
+  color: var(--player-o);
+}
+
+.win {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  z-index: 1001 !important;
+  position: fixed;
+  background: var(--blured-black);
+  -webkit-backdrop-filter: blur(27.5px);
+  backdrop-filter: blur(27.5px);
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.win #my-canvas {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+.win .section {
+  margin: 0 auto;
+  width: 750px;
+  border-radius: 10px;
+  background-color: var(--board-color);
+  padding: 50px;
+}
+.win .section .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.win .section .top svg {
+  margin-left: 50px;
+  width: 50px;
+  height: 50px;
+}
+.win .section .top h1 {
+  color: #A367B1;
+}
+.win .section .top h1 p {
+  display: inline-block;
+}
+.win .section .bottom .ad {
+  background-color: var(--board-select);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  height: 120px;
+}
+.win .section .bottom .ad h1 {
+  width: 100px;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--board-color);
+}
+.win .section .setting {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.win .section .setting button, .win .section .setting a {
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--board-color);
+}
+.win .section .setting button {
+  background-color: var(--player-o);
+}
+.win .section .setting a {
+  background-color: var(--player-x);
+}
+
+@media screen and (max-width: 376px) {
+  .cell:hover {
+    background-color: var(--board-select) !important;
+  }
+  .win .section {
+    width: 325px;
+  }
+  .win .section .bottom {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
