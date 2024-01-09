@@ -1,0 +1,15 @@
+@media screen and (max-width: 768px) {
+    .cell:hover {
+        background-color: var(--board-select) !important; 
+    }
+
+    .win{
+        .section{
+            width: 325px;
+
+            .bottom{
+                display: none;
+            }
+        }
+    }
+}
