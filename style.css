@@ -181,16 +181,4 @@ body {
 }
 .win .section .setting a {
   background-color: var(--player-x);
-}
-
-@media screen and (max-width: 376px) {
-  .cell:hover {
-    background-color: var(--board-select) !important;
-  }
-  .win .section {
-    width: 325px;
-  }
-  .win .section .bottom {
-    display: none;
-  }
 }/*# sourceMappingURL=style.css.map */
